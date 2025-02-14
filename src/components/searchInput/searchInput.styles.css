@@ -8,7 +8,6 @@
   border: 1px solid #aa0082;
   padding: 12px;
   border-radius: 6px;
-  cursor: pointer;
 }
 .searchInput > button:hover {
   background-color: #fff5ff;

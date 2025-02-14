@@ -1,19 +1,24 @@
 import { create } from "zustand";
-import { responseDataType } from "./repsonse";
+import { responseDataType } from "./store";
 
 interface IReposStore {
   starredRepos: responseDataType[];
-  starNewRepo: (repo: responseDataType) => void;
-  removeStarredRepo: (repo: responseDataType) => void;
+  starRepo: (repo: responseDataType) => void;
 }
 export const useStarredReposManager = create<IReposStore>((set) => ({
   starredRepos: [],
-  starNewRepo: (repo) =>
-    set((state) => ({ starredRepos: [...state.starredRepos, repo] })),
-  removeStarredRepo: (repo) =>
-    set((state) => ({
-      starredRepos: [
-        ...state.starredRepos.filter((item) => item.id !== repo.id),
-      ],
-    })),
+  starRepo: (repo) =>
+    set((state) => {
+      const isRepoStarred = state.starredRepos.find(
+        (item) => item.id === repo.id
+      );
+      if (!isRepoStarred) {
+        return { starredRepos: [...state.starredRepos, repo] };
+      }
+      return {
+        starredRepos: [
+          ...state.starredRepos.filter((item) => item.id !== repo.id),
+        ],
+      };
+    }),
 }));

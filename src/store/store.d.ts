@@ -1,6 +1,6 @@
 export type responseDataType = {
-  id: string;
-  name: string;
+  id: number;
+  title: string;
   owner: string;
   description: string;
   numberOfStars: number;
