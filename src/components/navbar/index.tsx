@@ -13,7 +13,7 @@ const Navbar = () => {
           <a href="/" className="hover:text-[#aa0082]">
             Search
           </a>
-          <a href="/" className="hover:text-[#aa0082]">
+          <a href="/starred-repos" className="hover:text-[#aa0082]">
             <FilledStar />
           </a>
         </div>
