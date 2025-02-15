@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { responseDataType } from "./store";
-import { fetchRepos, removeStarredRepo, starNewRepo } from "../network";
-import { Repository } from "../network/response";
+import { responseDataType } from "../types/store";
+import { fetchRepos, removeStarredRepo, starNewRepo } from "../api";
+import { Repository } from "../api/response";
 
 interface IReposStore {
   starredRepos: {

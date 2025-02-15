@@ -1,5 +1,5 @@
 import React from "react";
-import { responseDataType } from "../../store/store";
+import { responseDataType } from "../../types/store";
 import Fork from "../../assets/icons/fork.svg";
 import EmptyStar from "../../assets/icons/empty-star.svg";
 import FilledStar from "../../assets/icons/filled-star.svg";
