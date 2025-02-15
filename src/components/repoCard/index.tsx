@@ -1,7 +1,7 @@
 import React from "react";
 import { responseDataType } from "../../store/store";
-import Fork from "../../assets/images/fork.svg";
-import EmptyStar from "../../assets/images/empty-star.svg";
+import Fork from "../../assets/icons/fork.svg";
+import EmptyStar from "../../assets/icons/empty-star.svg";
 import "./repoCard.styles.css";
 
 interface IProps {

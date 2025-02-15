@@ -6,7 +6,8 @@ const token = import.meta.env.VITE_GITHUB_API_TOKEN;
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
   headers: {
-    authorization: token,
+    Authorization: `token ${token}`,
+    Accept: "application/vnd.github+json",
   },
 });
 

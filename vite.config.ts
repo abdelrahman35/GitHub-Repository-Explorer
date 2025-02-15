@@ -9,7 +9,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
     svgr({
-      // svgr options: https://react-svgr.com/docs/options/
       svgrOptions: {
         exportType: "default",
         ref: true,

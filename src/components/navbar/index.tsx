@@ -1,18 +1,20 @@
 import { useState } from "react";
-import BurgerMenu from "../../assets/images/burger-menu.svg";
-import CloseIcon from "../../assets/images/close.svg";
+import BurgerMenu from "../../assets/icons/burger-menu.svg";
+import CloseIcon from "../../assets/icons/close.svg";
+import FilledStar from "../../assets/icons/filled-star.svg";
+import "./navbar.styles.css";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="bg-[#fff5ff]">
-      <div className="hidden md:flex justify-between p-6">
+      <div className="hidden md:flex justify-between items-center p-6">
         <h1 className="text-2xl font-bold hover:text-[#aa0082]">Home</h1>
-        <div className="flex gap-2 text-xl">
+        <div className="flex items-center gap-2 text-xl">
           <a href="/" className="hover:text-[#aa0082]">
             Search
           </a>
           <a href="/" className="hover:text-[#aa0082]">
-            Starred Repos
+            <FilledStar />
           </a>
         </div>
       </div>

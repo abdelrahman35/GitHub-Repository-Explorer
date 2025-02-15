@@ -1,28 +1,27 @@
 import "./searchInput.styles.css";
-import SearchIcon from "../../assets/images/search.svg";
-import axiosInstance from "../../network/axiosInstance";
+import SearchIcon from "../../assets/icons/search.svg";
 import { debounce } from "lodash";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import RepoCard from "../repoCard";
 import { Repository } from "../../network/response";
 import { useStarredReposManager } from "../../store";
+import { fetchRepos } from "../../network";
 
 const SearchInput = () => {
   const [result, setResult] = useState<Repository[]>([]);
   const { starRepo, starredRepos } = useStarredReposManager();
   const fetchAllRepos = useCallback(
     debounce(async (keyword: string) => {
-      await axiosInstance
-        .get("/search/repositories", {
-          params: { q: keyword, per_page: 10 },
-        })
-        .then((res) => {
-          setResult(res.data.items);
-        });
+      await fetchRepos(keyword).then((res) => {
+        setResult(res.data.items);
+      });
     }, 500),
     []
   );
-  console.log(starredRepos, "starredRepos");
+  useEffect(() => {
+    console.log(starredRepos, "starredRepos");
+  }, [starredRepos]);
+
   return (
     <>
       <div className="searchInput">
@@ -51,7 +50,7 @@ const SearchInput = () => {
               numberOfStars: item.stargazers_count,
             }}
             onClick={() =>
-              starRepo({
+              starRepo(item.owner.login, {
                 id: item.id,
                 title: item.name,
                 description: item.description as string,
