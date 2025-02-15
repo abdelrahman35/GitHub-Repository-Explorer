@@ -2,13 +2,18 @@ import React from "react";
 import { responseDataType } from "../../store/store";
 import Fork from "../../assets/icons/fork.svg";
 import EmptyStar from "../../assets/icons/empty-star.svg";
+import FilledStar from "../../assets/icons/filled-star.svg";
+import StarsCounter from "../../assets/icons/stars-counter.svg";
 import "./repoCard.styles.css";
+import { useStarredReposManager } from "../../store";
 
 interface IProps {
   data: responseDataType;
   onClick: () => void;
 }
 const RepoCard: React.FC<IProps> = ({ data, onClick }) => {
+  const { starredRepos } = useStarredReposManager();
+  const isRepoStarred = starredRepos.data.find((item) => item.id === data.id);
   return (
     <div id={data.id.toString()} className="cardRepoWrapper">
       <div className="firstSection">
@@ -26,7 +31,7 @@ const RepoCard: React.FC<IProps> = ({ data, onClick }) => {
         </div>
         <div>
           <button type="button" onClick={onClick}>
-            Star
+            {isRepoStarred ? <FilledStar /> : <EmptyStar />}
           </button>
         </div>
       </div>
@@ -37,7 +42,7 @@ const RepoCard: React.FC<IProps> = ({ data, onClick }) => {
         </div>
         <div className="countSection">
           <div>{data.numberOfStars}</div>
-          <EmptyStar />
+          <StarsCounter />
         </div>
       </div>
     </div>
