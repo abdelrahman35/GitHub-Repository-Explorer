@@ -12,6 +12,7 @@ interface IReposStore {
   fetchedRepos: { data: Repository[]; error: boolean; loading: boolean };
   starRepo: (owner: string, repo: responseDataType) => Promise<void>;
   fetchRepos: (keyword: string) => Promise<void>;
+  clearFetchedRepos: () => void;
 }
 
 export const useStarredReposManager = create<IReposStore>((set, get) => ({
@@ -21,6 +22,15 @@ export const useStarredReposManager = create<IReposStore>((set, get) => ({
     loading: false,
   },
   fetchedRepos: { data: [], loading: false, error: false },
+  clearFetchedRepos: () => {
+    set({
+      fetchedRepos: {
+        loading: true,
+        error: false,
+        data: [],
+      },
+    });
+  },
   fetchRepos: async (keyword) => {
     set({
       fetchedRepos: {

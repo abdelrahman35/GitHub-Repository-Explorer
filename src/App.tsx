@@ -7,11 +7,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        {Object.values(routes).map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
-        ))}
-      </Routes>
+      <div className="pagesWrapper">
+        {" "}
+        <Routes>
+          {Object.values(routes).map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </div>
     </>
   );
 }

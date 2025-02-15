@@ -16,33 +16,39 @@ const RepoCard: React.FC<IProps> = ({ data, onClick }) => {
   const isRepoStarred = starredRepos.data.find((item) => item.id === data.id);
   return (
     <div id={data.id.toString()} className="cardRepoWrapper">
-      <div className="firstSection">
-        <div>
-          <span>Title: </span> {data.title}
-        </div>
-        <div>
+      <div className="sectionsWrapper">
+        <div className="firstSection">
           {" "}
-          <span>Description: </span>
-          {data.description}
+          <div>
+            <span>Title: </span> {data.title}
+          </div>
+          <div>
+            <span>Owner: </span>
+            {data.owner}
+          </div>
+          <div>
+            {" "}
+            <span>Description: </span>
+            {data.description}
+          </div>
         </div>
-        <div>
-          <span>Owner: </span>
-          {data.owner}
+
+        <div className="secondSection">
+          <div className="countSection">
+            <span>{data.numberOfForks}</span>
+            <Fork />
+          </div>
+          <div className="countSection">
+            <div>{data.numberOfStars}</div>
+            <StarsCounter />
+          </div>
         </div>
+      </div>
+      <div>
         <div>
           <button type="button" onClick={onClick}>
             {isRepoStarred ? <FilledStar /> : <EmptyStar />}
           </button>
-        </div>
-      </div>
-      <div className="secondSection">
-        <div className="countSection">
-          <span>{data.numberOfForks}</span>
-          <Fork />
-        </div>
-        <div className="countSection">
-          <div>{data.numberOfStars}</div>
-          <StarsCounter />
         </div>
       </div>
     </div>

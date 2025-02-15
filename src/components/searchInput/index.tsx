@@ -1,11 +1,11 @@
-import "./searchInput.styles.css";
-import SearchIcon from "../../assets/icons/search.svg";
 import { debounce } from "lodash";
-import { useEffect, useMemo } from "react";
+import { useMemo, useState } from "react";
 import { useStarredReposManager } from "../../store";
+import "./searchInput.styles.css";
 
 const SearchInput = () => {
-  const { fetchRepos, fetchedRepos } = useStarredReposManager();
+  const [keyword, setKeyword] = useState("");
+  const { fetchRepos, clearFetchedRepos } = useStarredReposManager();
   const fetchAllRepos = useMemo(
     () =>
       debounce(async (keyword: string) => {
@@ -13,22 +13,26 @@ const SearchInput = () => {
       }, 500),
     [fetchRepos]
   );
-  useEffect(() => {
-    console.log(fetchedRepos, "fetchedRepos");
-  }, [fetchedRepos]);
-
   return (
     <div className="searchInput">
       <input
         type="text"
         placeholder="Enter Keyword"
+        value={keyword}
         onChange={(e) => {
           const { value } = e.target;
+          setKeyword(value);
           if (value) fetchAllRepos(value);
         }}
       />
-      <button type="button">
-        <SearchIcon />
+      <button
+        type="button"
+        onClick={() => {
+          setKeyword("");
+          clearFetchedRepos();
+        }}
+      >
+        Clear
       </button>
     </div>
   );

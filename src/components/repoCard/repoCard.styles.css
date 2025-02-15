@@ -15,14 +15,22 @@
   border: 1px solid #aa0082;
   font-size: large;
   font-weight: 500;
+  gap: 8px;
 }
-.firstSection,
-.secondSection {
+.sectionsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.firstSection {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
-
+.secondSection {
+  display: flex;
+  gap: 16px;
+}
 span {
   font-size: 16px;
   font-weight: 700;
