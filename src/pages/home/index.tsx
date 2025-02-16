@@ -1,6 +1,6 @@
 import RepoCard from "@components/repoCard";
 import SearchInput from "@components/searchInput";
-import { useStarredReposManager } from "@store";
+import { useStarredReposManager } from "@store/index";
 import "./home.styles.css";
 const Home = () => {
   const { fetchedRepos, starRepo } = useStarredReposManager();

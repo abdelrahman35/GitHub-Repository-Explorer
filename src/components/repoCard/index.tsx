@@ -1,11 +1,11 @@
 import React from "react";
-import { responseDataType } from "@types/store";
-import Fork from "@assets/icons/fork.svg";
-import EmptyStar from "@assets/icons/empty-star.svg";
-import FilledStar from "@assets/icons/filled-star.svg";
-import StarsCounter from "@assets/icons/stars-counter.svg";
+import { responseDataType } from "../../types/store";
+import { ReactComponent as Fork } from "@assets/icons/fork.svg";
+import { ReactComponent as EmptyStar } from "@assets/icons/empty-star.svg";
+import { ReactComponent as FilledStar } from "@assets/icons/filled-star.svg";
+import { ReactComponent as StarsCounter } from "@assets/icons/stars-counter.svg";
 import "./repoCard.styles.css";
-import { useStarredReposManager } from "@store";
+import { useStarredReposManager } from "@store/index";
 
 interface IProps {
   data: responseDataType;

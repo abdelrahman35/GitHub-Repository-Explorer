@@ -11,7 +11,7 @@ export default defineConfig({
     tailwindcss(),
     svgr({
       svgrOptions: {
-        exportType: "default",
+        exportType: "named",
         ref: true,
         svgo: false,
         titleProp: true,
@@ -24,6 +24,7 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "src/components"),
       "@assets": path.resolve(__dirname, "src/assets"),
       "@store": path.resolve(__dirname, "src/store"),
+      "@types": path.resolve(__dirname, "src/types"),
     },
   },
 });

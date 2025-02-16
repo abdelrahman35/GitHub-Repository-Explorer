@@ -1,5 +1,5 @@
 import RepoCard from "@components/repoCard";
-import { useStarredReposManager } from "@store";
+import { useStarredReposManager } from "@store/index";
 import "./starredRepos.styles.css";
 
 const StarredReposPage = () => {
@@ -9,7 +9,7 @@ const StarredReposPage = () => {
       {starredRepos.data.length === 0 ? (
         <div className="emptyState">There is no starred repos found</div>
       ) : (
-        <div className="">
+        <div className="cardsWrapper">
           {" "}
           {starredRepos.data.map((item) => (
             <RepoCard

@@ -1,21 +1,16 @@
-import FilledStar from "@assets/icons/filled-star.svg";
-import GithubIcon from "@assets/icons/github-icon.svg";
+import { ReactComponent as FilledStar } from "@assets/icons/filled-star.svg";
+import { ReactComponent as GithubIcon } from "@assets/icons/github-icon.svg";
 import "./navbar.styles.css";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="navbarWrapper">
-      <div className="hidden md:flex justify-between items-center p-6">
-        <h1 className="text-2xl font-bold hover:text-[#aa0082]">
-          <a href="/">
-            <GithubIcon />
-          </a>
-        </h1>
-        <div className="flex items-center gap-2 text-xl">
-          <a href="/starred-repos" className="hover:text-[#aa0082]">
-            <FilledStar width={24} height={24} />
-          </a>
-        </div>
-      </div>
+      <Link to="/" className="navLink">
+        <GithubIcon />
+      </Link>
+      <Link to="/starred-repos" className="navLink">
+        <FilledStar width={24} height={24} />
+      </Link>
     </div>
   );
 };

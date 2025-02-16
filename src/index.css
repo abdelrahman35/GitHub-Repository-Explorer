@@ -7,7 +7,7 @@ input {
   border: 1px solid #aa0082;
   outline: none !important;
   border-radius: 8px;
-  min-width: 400px;
+  width: 400px;
   height: 60px;
   padding: 16px;
   font-size: 20px;
@@ -19,4 +19,14 @@ input:focus {
 }
 button {
   cursor: pointer;
+}
+
+.input-field {
+  width: 400px; /* Default width */
+}
+
+@media (max-width: 768px) {
+  input {
+    width: 300px;
+  }
 }

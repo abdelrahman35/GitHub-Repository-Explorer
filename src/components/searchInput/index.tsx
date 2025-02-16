@@ -1,6 +1,7 @@
 import { debounce } from "lodash";
 import { useMemo, useState } from "react";
-import { useStarredReposManager } from "@store";
+import { useStarredReposManager } from "@store/index";
+import { ReactComponent as CloseIcon } from "@assets/icons/close.svg";
 import "./searchInput.styles.css";
 
 const SearchInput = () => {
@@ -32,7 +33,7 @@ const SearchInput = () => {
           clearFetchedRepos();
         }}
       >
-        Clear
+        <CloseIcon />
       </button>
     </div>
   );
