@@ -5,12 +5,12 @@
 }
 
 .searchInput > button {
-  border: 1px solid #aa0082;
+  border: 1px solid var(--primary-color);
   padding: 12px;
   border-radius: 6px;
   height: 60px;
-  color: #aa0082;
+  color: var(--primary-color);
 }
 .searchInput > button:hover {
-  background-color: #fff5ff;
+  background-color: var(--background-color);
 }

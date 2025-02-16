@@ -1,11 +1,17 @@
 @import "tailwindcss";
+:root {
+  --primary-color: #aa0082;
+  --secondary-color: #b382a0;
+  --background-color: #fff5ff;
+  --nav-color: #efefdc;
+}
 
 body {
   height: 100vh;
 }
 
 input {
-  border: 1px solid #aa0082;
+  border: 1px solid var(--primary-color);
   outline: none !important;
   border-radius: 8px;
   width: 400px;
@@ -15,7 +21,7 @@ input {
   line-height: 28px;
 }
 input:focus {
-  border-color: #b382a0;
+  border-color: var(--secondary-color);
 }
 button {
   cursor: pointer;
@@ -25,4 +31,35 @@ button {
   input {
     width: 300px;
   }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--primary-color);
+  border-bottom-color: var(--secondary-color);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 16px;
+  border-radius: 8px;
+  border: 2px solid var(--nav-color);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
 }

@@ -4,8 +4,8 @@ import { ReactComponent as Fork } from "@assets/icons/fork.svg";
 import { ReactComponent as EmptyStar } from "@assets/icons/empty-star.svg";
 import { ReactComponent as FilledStar } from "@assets/icons/filled-star.svg";
 import { ReactComponent as StarsCounter } from "@assets/icons/stars-counter.svg";
-import "./repoCard.styles.css";
 import { useStarredReposManager } from "@store/index";
+import "./repoCard.styles.css";
 
 interface IProps {
   data: responseDataType;
