@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 body {
   height: 100vh;
 }
@@ -7,7 +9,6 @@ input {
   outline: none !important;
   border-radius: 8px;
   width: 400px;
-  height: 60px;
   padding: 16px;
   font-size: 20px;
   font-weight: 400;
@@ -18,10 +19,6 @@ input:focus {
 }
 button {
   cursor: pointer;
-}
-
-.input-field {
-  width: 400px; /* Default width */
 }
 
 @media (max-width: 768px) {
