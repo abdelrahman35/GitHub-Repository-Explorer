@@ -2,7 +2,7 @@ import Home from "../pages/home";
 import NotFoundPage from "../pages/notFound";
 
 import StarredReposPage from "../pages/starredRepos";
-import IRoutes from "./routes";
+import IRoutes from "../types/routes";
 
 const routes: IRoutes = {
   home: { path: "/", element: <Home /> },

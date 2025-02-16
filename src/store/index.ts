@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { responseDataType } from "../types/store";
 import { fetchRepos, removeStarredRepo, starNewRepo } from "../api";
-import { Repository } from "../api/response";
+import { Repository } from "../types/response";
 
 interface IReposStore {
   starredRepos: {

@@ -1,5 +1,5 @@
-import RepoCard from "../../components/repoCard";
-import { useStarredReposManager } from "../../store";
+import RepoCard from "@components/repoCard";
+import { useStarredReposManager } from "@store";
 import "./starredRepos.styles.css";
 
 const StarredReposPage = () => {

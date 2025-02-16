@@ -1,6 +1,6 @@
 import { debounce } from "lodash";
 import { useMemo, useState } from "react";
-import { useStarredReposManager } from "../../store";
+import { useStarredReposManager } from "@store";
 import "./searchInput.styles.css";
 
 const SearchInput = () => {

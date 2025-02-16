@@ -1,5 +1,5 @@
-import FilledStar from "../../assets/icons/filled-star.svg";
-import GithubIcon from "../../assets/icons/github-icon.svg";
+import FilledStar from "@assets/icons/filled-star.svg";
+import GithubIcon from "@assets/icons/github-icon.svg";
 import "./navbar.styles.css";
 const Navbar = () => {
   return (
@@ -12,7 +12,7 @@ const Navbar = () => {
         </h1>
         <div className="flex items-center gap-2 text-xl">
           <a href="/starred-repos" className="hover:text-[#aa0082]">
-            <FilledStar />
+            <FilledStar width={24} height={24} />
           </a>
         </div>
       </div>
