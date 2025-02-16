@@ -2,7 +2,7 @@
 
 ## How to Run the Project
 
-1. Clone the repository from the main branch:
+1. Clone the repository from the **main** branch:
 
 2. Navigate to the project directory:
    ```sh
