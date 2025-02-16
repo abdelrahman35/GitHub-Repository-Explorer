@@ -31,7 +31,7 @@ export const useStarredReposManager = create<
       clearFetchedRepos: () => {
         set({
           fetchedRepos: {
-            loading: true,
+            loading: false,
             error: false,
             data: [],
           },

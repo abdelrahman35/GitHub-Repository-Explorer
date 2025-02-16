@@ -4,11 +4,16 @@ import { useStarredReposManager } from "@store/index";
 import "./home.styles.css";
 const Home = () => {
   const { fetchedRepos, starRepo } = useStarredReposManager();
+  console.log(fetchedRepos.loading);
   return (
     <div className="homeWrapper">
       <div>
         <SearchInput />
       </div>
+      {fetchedRepos.loading && <div className="loader"></div>}
+      {fetchedRepos.error && (
+        <div className="error"> opps something went wrong</div>
+      )}
       <div className="cardsWrapper">
         {fetchedRepos.data.map((item) => {
           const data = {
